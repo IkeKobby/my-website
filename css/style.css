@@ -63,6 +63,17 @@ a, a:hover, a:active {
 	cursor: pointer;
 }
 
+.topic-link {
+    color: #007bff;
+    text-decoration: none;
+    border-bottom: 1px dotted #007bff;
+  }
+  
+  .topic-link:hover {
+    color: #0056b3;
+    border-bottom: 1px solid #0056b3;
+  }
+
 .grid figure img {
 	position: relative;
 	display: block;
@@ -364,12 +375,12 @@ p {
     position: relative;
 	
     background: #8B4513;
-	height:650px;
+	height:450px;
 }
 
 .hero_section {
     position: relative;
-    padding-top: 72px;
+    padding-top: 65px;
 }
 
 .white_pad {
@@ -385,7 +396,7 @@ p {
 }
 
 .top_left_cont {
-    padding: 110px 0;
+    padding: 90px 0;
 }
 
 .top_left_cont h3 {
@@ -1994,7 +2005,7 @@ height: 335px;
 }
 .hero_section {
 position: relative;
-padding-top: 10px;
+padding-top: 9px;
 }
 .top_left_cont {
 padding: 38px 0;

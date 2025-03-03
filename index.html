@@ -1,66 +1,783 @@
-<!DOCTYPE html>
+<!--
+Author: Original template by http://webthemez.com
+Modified by Claude
+-->
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Isaac Kobby Anni - Data Scientist</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, maximum-scale=1">
+<meta name="description" content="Isaac Kobby Anni - Data Scientist specializing in machine learning, AI, and data analytics">
+<title>Isaac Kobby Anni | Data Scientist</title>
+<link rel="icon" href="favicon.png" type="image/png">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+<link href="css/style.css" rel="stylesheet" type="text/css"> 
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css"> 
+<link href="css/animate.css" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<!--[if lt IE 9]>
+    <script src="js/respond-1.1.0.min.js"></script>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/html5element.js"></script>
+<![endif]-->
 </head>
 <body>
-  <header>
-    <h1>Isaac Kobby Anni</h1>
-    <p>Data Scientist | Machine Learning Engineer | AI Enthusiast</p>
-    <a href="#projects" class="cta-button">View My Work</a>
-  </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <img src="me.jpg" alt="Isaac Kobby Anni" class="profile-photo">
-      <div class="about-text">
-        <p>
-          Hi, I'm Isaac Kobby Anni, a passionate Data Scientist with expertise in machine learning, data analytics, and artificial intelligence. Currently pursuing a PhD in Data Science at Bowling Green State University, I specialize in building predictive models, analyzing complex datasets, and delivering actionable insights to drive decision-making.
-        </p>
-        <p>
-          With a strong academic background in Data Science, Statistics, and Finance, I have hands-on experience in advanced analytics, natural language processing (NLP), computer vision, and geospatial data analysis. My professional journey includes roles as a Graduate Assistant at Bowling Green State University, where I developed predictive models for student success, and as a Data Science Fellow at ICRISAT/CLU, where I contributed to crop simulation and sentiment analysis projects.
-        </p>
-        <p>
-          I am proficient in Python, R, SQL, and tools like PyTorch, TensorFlow, and PowerBI. My work focuses on leveraging data to solve real-world problems, from improving loan approval accuracy to identifying potato diseases using deep learning. I am always eager to collaborate on innovative projects and explore new opportunities in data science and AI.
-        </p>
+<!--Hero_Section-->
+<section id="hero_section" class="top_cont_outer">
+  <div class="hero_wrapper">
+    <div class="container">
+      <div class="hero_section">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="top_left_cont zoomIn wow animated"> 
+              <h1>Isaac Kobby Anni</h1>
+              <h2><strong>Data Scientist & AI Researcher</strong></h2>
+              <p>Transforming complex data into actionable insights</p>
+              <div class="underline"></div>             
+              <div class="hero-buttons">
+                <a href="#aboutUs" class="read_more2 btn btn-primary">Who Am I</a>
+                <a href="#Portfolio" class="read_more2 btn btn-secondary">View My Work</a>
+              </div>
+            </div>
+          </div> 
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+<!--Hero_Section--> 
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Fake News Detection with Fine-Tuned Transformers</h3>
-      <p>
-        Developed a transformer-based model for fake news classification using PyTorch. Fine-tuned the model to achieve high accuracy in distinguishing authentic news from fraudulent content.
-      </p>
-      <a href="https://github.com/ikekobby/fatima-fellowship" target="_blank">View on GitHub</a>
+<!--Header_section-->
+<header id="header_wrapper">
+  <div class="container">
+    <div class="header_box">
+      <!-- <div class="logo"><a href="#"><img src="img/logo-1.png" alt="Isaac Kobby Anni logo"></a></div> -->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <button type="button" id="nav-toggle" class="navbar-toggler" data-toggle="collapse" data-target="#main-nav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-nav" class="collapse navbar-collapse navStyle">
+          <ul class="nav navbar-nav ml-auto" id="mainNav">
+            <li class="nav-item active"><a class="nav-link" href="#hero_section">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#aboutUs">About Me</a></li>
+            <li class="nav-item"><a class="nav-link" href="#service">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#Portfolio">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#clients">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="#team">Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
-    <div class="project">
-      <h3>Potato Disease Identification via Transfer Learning on CNN</h3>
-      <p>
-        Engineered a transfer learning approach using a pre-trained Convolutional Neural Network (CNN) to classify potato diseases. Achieved 96% classification accuracy by fine-tuning the model on a dataset of 10 disease categories.
-      </p>
-      <a href="https://github.com/ikekobby/plants_village_project" target="_blank">View on GitHub</a>
-    </div>
-    <div class="project">
-      <h3>Geospatial Building Segmentation for Real Estate with U-Net</h3>
-      <p>
-        Developed a U-Net deep learning model for geospatial segmentation of rental properties in Senegal using satellite imagery. Enhanced building localization for real estate assessment.
-      </p>
-      <a href="https://github.com/ikekobby/semantic-segmentation" target="_blank">View on GitHub</a>
-    </div>
-  </section>
+  </div>
+</header>
+<!--Header_section--> 
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:isaacka@bgsu.edu">isaacka@bgsu.edu</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/isaac-kobby-anni" target="_blank">Isaac Kobby Anni</a></p>
-  </section>
+<section id="aboutUs" class="about-section">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>About Me</h2>
+      <!-- <p class="subtitle">Data Scientist, Researcher, and Innovator</p> -->
+    </div>
+    <div class="row align-items-center">
+      <div class="col-lg-5 col-md-6">
+        <div class="about-img">
+          <img class="img-fluid rounded shadow" src="img/me.jpg" alt="Isaac Kobby Anni">
+          <div class="social-icons mt-4 text-center">
+            <a href="https://linkedin.com/in/isaac-kobby-anni" target="_blank" class="btn btn-outline-primary"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/isaackobbyanni" target="_blank" class="btn btn-outline-dark"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/isaackobbyanni" target="_blank" class="btn btn-outline-info"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7 col-md-6">
+        <div class="about-content">
+          <h3>Data Scientist & AI Researcher</h3>
+          <p class="lead">
+            Hi, I'm a Data Scientist with specialization in machine learning, AI, and data analytics. 
+            Currently a PhD candidate in Data Science at Bowling Green State University, I apply advanced analytics to solve real-world problems. 
+            My expertise spans research, industry applications, and innovative AI solutions.
+          </p>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="about-feature">
+                <i class="fas fa-brain"></i>
+                <h4>Machine Learning & AI</h4>
+                <p>NLP, Computer vision, Predictive modeling, Data analytics</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="about-feature">
+                <i class="fas fa-laptop-code"></i>
+                <h4>Technical Proficiency</h4>
+                <p>Python, R, SQL, PyTorch, TensorFlow, Power BI</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="about-feature">
+                <i class="fas fa-flask"></i>
+                <h4>Research Experience</h4>
+                <p>Representation learning, information extraction, AI for Healthcare and Education</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="about-feature">
+                <i class="fas fa-lightbulb"></i>
+                <h4>Problem-Solving Focus</h4>
+                <p>NLU, Image Analysis, Semantic segmentation, Predictive Modeling</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4">
+            <a href="#contact" class="btn btn-primary">Contact Me</a>
+            <a href="https://raw.githubusercontent.com/IkeKobby/my-website/refs/heads/main/files/isaac-resume-main.pdf" class="btn btn-outline-primary ml-2">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Skills Section-->
+<section id="service" class="skills-section bg-light">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Skills & Expertise</h2>
+      <p class="subtitle">My technical toolkit for Data Science and AI solutions</p>
+    </div>
+    
+    <div class="row">
+      <!-- Technical Skills -->
+      <div class="col-lg-6">
+        <h3 class="mb-4">Technical Skills</h3>
+        
+        <div class="skill-item">
+          <div class="d-flex justify-content-between">
+            <h5>Python</h5>
+            <span>95%</span>
+          </div>
+          <div class="progress">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="d-flex justify-content-between">
+            <h5>R</h5>
+            <span>85%</span>
+          </div>
+          <div class="progress">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="d-flex justify-content-between">
+            <h5>PyTorch</h5>
+            <span>90%</span>
+          </div>
+          <div class="progress">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="d-flex justify-content-between">
+            <h5>TensorFlow</h5>
+            <span>88%</span>
+          </div>
+          <div class="progress">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="d-flex justify-content-between">
+            <h5>SQL</h5>
+            <span>80%</span>
+          </div>
+          <div class="progress">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Domain Expertise -->
+      <div class="col-lg-6">
+        <h3 class="mb-4">Domain Expertise</h3>
+        
+        <div class="domain-skills">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="skill-box">
+                <i class="fas fa-comment-alt"></i>
+                <h4>Natural Language Processing</h4>
+                <p>Text classification, sentiment analysis, named entity recognition, topic modeling, LLM's</p>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="skill-box">
+                <i class="fas fa-eye"></i>
+                <h4>Computer Vision</h4>
+                <p>Image classification, object detection, semantic segmentation, GANs</p>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="skill-box">
+                <i class="fas fa-chart-line"></i>
+                <h4>Predictive Analytics</h4>
+                <p>Time series forecasting, regression analysis, classification models</p>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="skill-box">
+                <i class="fas fa-database"></i>
+                <h4>Big Data Technologies</h4>
+                <p>Hadoop, Spark, cloud computing platforms, distributed systems</p>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="skill-box">
+                <i class="fas fa-project-diagram"></i>
+                <h4>Data Engineering</h4>
+                <p>ETL pipelines, data warehousing, data modeling, optimization</p>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="skill-box">
+                <i class="fas fa-chart-pie"></i>
+                <h4>Data Visualization</h4>
+                <p>PowerBI, Tableau, matplotlib, seaborn, interactive dashboards</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Skills Section-->
+
+<!-- Portfolio Section -->
+<section id="Portfolio" class="portfolio-section"> 
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>My Projects</h2>
+      <p class="subtitle">Showcasing my work in data science and artificial intelligence</p>
+    </div>
+    
+    <!-- Portfolio Filters -->
+    <div class="portfolio-filters">
+      <ul class="nav justify-content-center" id="filters">
+        <li class="nav-item">
+          <a class="nav-link active" href="#" data-filter="*">All Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter=".nlp">NLP Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter=".cv">Computer Vision</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter=".ml">Machine Learning</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter=".exploration">Exploration</a>
+        </li>
+      </ul>
+    </div>
+    
+    <!-- Portfolio Grid -->
+    <div class="row grid" id="portfolio_wrapper">
+      
+      <!-- NLP Projects -->
+      <div class="col-lg-4 col-md-6 grid-item nlp">
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="img/topic_modeling.png" alt="Topic Modeling" class="img-fluid">
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h4>Topic Modeling</h4>
+                <p>Exploring hidden topics in large text corpora</p>
+                <a href="img/topic_modeling.png" class="fancybox"><i class="fas fa-search-plus"></i></a>
+                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 grid-item nlp">
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="img/question_answering_.png" alt="Question Answering" class="img-fluid">
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h4>Question Answering</h4>
+                <p>Building systems to retrieve precise answers from documents</p>
+                <a href="img/question_answering_.png" class="fancybox"><i class="fas fa-search-plus"></i></a>
+                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Computer Vision -->
+      <div class="col-lg-4 col-md-6 grid-item cv">
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="img/image_classification_.png" alt="Image Classification" class="img-fluid">
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h4>Image Classification</h4>
+                <p>Developing models to categorize images into predefined classes</p>
+                <a href="img/image_classification_.png" class="fancybox"><i class="fas fa-search-plus"></i></a>
+                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 grid-item cv">
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="img/image_segmentation.jpg" alt="Image Segmentation" class="img-fluid">
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h4>Image Segmentation</h4>
+                <p>Partitioning images into meaningful segments</p>
+                <a href="img/image_segmentation.jpg" class="fancybox"><i class="fas fa-search-plus"></i></a>
+                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Machine Learning -->
+      <div class="col-lg-4 col-md-6 grid-item ml">
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="img/predictive_modeling.png" alt="Predictive Modeling" class="img-fluid">
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h4>Predictive Modeling</h4>
+                <p>Building models to forecast trends and outcomes</p>
+                <a href="img/predictive_modeling.png" class="fancybox"><i class="fas fa-search-plus"></i></a>
+                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 grid-item ml">
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="img/data_analytics.png" alt="Data Analytics" class="img-fluid">
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h4>Student Success Analytics</h4>
+                <p>Using Power BI and Python to analyze student success metrics</p>
+                <a href="img/data_analytics.png" class="fancybox"><i class="fas fa-search-plus"></i></a>
+                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Exploration -->
+      <div class="col-lg-4 col-md-6 grid-item exploration">
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="img/multi_modal.png" alt="Multi-Modal Learning" class="img-fluid">
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h4>Multi-Modal Learning</h4>
+                <p>Exploring text, image, and audio representation for combined learning</p>
+                <a href="img/multi_modal.png" class="fancybox"><i class="fas fa-search-plus"></i></a>
+                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- New Project: Reinforcement Learning
+      <div class="col-lg-4 col-md-6 grid-item exploration">
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="img/reinforcement_learning.jpg" alt="Reinforcement Learning" class="img-fluid">
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h4>Reinforcement Learning</h4>
+                <p>Training agents to make sequential decisions through exploration</p>
+                <a href="img/reinforcement_learning.jpg" class="fancybox"><i class="fas fa-search-plus"></i></a>
+                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      
+      <!-- New Project: Time Series Forecasting -->
+      <div class="col-lg-4 col-md-6 grid-item ml">
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="img/time-series.png" alt="Time Series Forecasting" class="img-fluid">
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h4>Time Series Forecasting</h4>
+                <p>Predicting future values based on historical patterns</p>
+                <a href="img/time-series.png" class="fancybox"><i class="fas fa-search-plus"></i></a>
+                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Portfolio Section -->
+
+<!-- Experience Section -->
+<section id="clients" class="experience-section bg-light">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Experience</h2>
+      <p class="subtitle">My professional journey in data science and research</p>
+    </div>
+    
+    <div class="timeline">
+      <!-- Experience Item 1 -->
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <div class="date">2022 - Present</div>
+          <h3>PhD Candidate - Data Science</h3>
+          <h4>Bowling Green State University</h4>
+          <p>Conducting research on advanced machine learning algorithms for predictive analytics. Working on student success models and developing innovative AI solutions.</p>
+          <ul class="timeline-list">
+            <li>Developing student success predictive models</li>
+            <li>Researching NLP applications for educational content</li>
+            <li>Collaborating with faculty on interdisciplinary AI projects</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Experience Item 2 -->
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <div class="date">2020 - 2022</div>
+          <h3>Data Scientist</h3>
+          <h4>ICRISAT</h4>
+          <p>Applied machine learning and computer vision techniques to agricultural data. Developed crop simulation models and implemented deep learning for disease detection.</p>
+          <ul class="timeline-list">
+            <li>Built image classification models for crop disease detection</li>
+            <li>Developed predictive analytics solutions for agricultural outcomes</li>
+            <li>Created data visualization dashboards for research insights</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Experience Item 3 -->
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <div class="date">2018 - 2020</div>
+          <h3>Research Assistant</h3>
+          <h4>University of Arizona</h4>
+          <p>Worked in the Computational Language Understanding lab under Dr. Mihai Surdeanu. Focused on natural language understanding and question answering systems.</p>
+          <ul class="timeline-list">
+            <li>Developed information extraction algorithms</li>
+            <li>Implemented question answering systems</li>
+            <li>Published research on topic modeling techniques</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Experience Section -->
+
+<!-- Testimonials Section -->
+<section id="team" class="testimonial-section">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Testimonials</h2>
+      <p class="subtitle">What my colleagues and mentors say about my work</p>
+    </div>
+    
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#testimonialCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#testimonialCarousel" data-slide-to="1"></li>
+            <li data-target="#testimonialCarousel" data-slide-to="2"></li>
+            <li data-target="#testimonialCarousel" data-slide-to="3"></li>
+          </ol>
+          
+          <div class="carousel-inner">
+            <!-- Testimonial 1 -->
+            <div class="carousel-item active">
+              <div class="testimonial-item">
+                <div class="row align-items-center">
+                  <div class="col-md-4">
+                    <div class="testimonial-img">
+                      <img src="img/brooks.jpg" alt="Kim Brooks" class="img-fluid rounded-circle">
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="testimonial-content">
+                      <p>"Isaac's work on our student success prediction models has been exceptional. His innovative approach to data analytics has significantly improved our ability to identify at-risk students and provide timely interventions."</p>
+                      <h4>Kim Brooks</h4>
+                      <span>Director of Student Success and Analytics Technologies, BGSU</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="carousel-item">
+              <div class="testimonial-item">
+                <div class="row align-items-center">
+                  <div class="col-md-4">
+                    <div class="testimonial-img">
+                      <img src="img/dasigi.jpg" alt="Dasigi G. Venu" class="img-fluid rounded-circle">
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="testimonial-content">
+                      <p>"As a PhD student, Isaac demonstrates exceptional technical skills and research capabilities. His contributions to our department's research initiatives have been valuable, showing great promise in the field of data science."</p>
+                      <h4>Dasigi G. Venu</h4>
+                      <span>Professor & Data Science Graduate Coordinator, BGSU</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="carousel-item">
+              <div class="testimonial-item">
+                <div class="row align-items-center">
+                  <div class="col-md-4">
+                    <div class="testimonial-img">
+                      <img src="img/mihai.png" alt="Mihai Surdeanu" class="img-fluid rounded-circle">
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="testimonial-content">
+                      <p>"Isaac's work in our NLP lab was characterized by creativity and technical excellence. His contributions to our question answering systems demonstrated both theoretical understanding and practical implementation skills."</p>
+                      <h4>Mihai Surdeanu</h4>
+                      <span>Head of Computational Language Understanding lab, University of Arizona</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial 4 -->
+            <div class="carousel-item">
+              <div class="testimonial-item">
+                <div class="row align-items-center">
+                  <div class="col-md-4">
+                    <div class="testimonial-img">
+                      <img src="img/Des.png" alt="Des Johnston" class="img-fluid rounded-circle">
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="testimonial-content">
+                      <p>"I had the pleasure of collaborating with Isaac on a cross-disciplinary project combining mathematical modeling with machine learning. His ability to bridge these fields was impressive and led to novel approaches."</p>
+                      <h4>Des Johnston</h4>
+                      <span>Faculty Member, Mathematical and Computer Science, Heriot-Watt University</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Testimonials Section -->
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Get In Touch</h2>
+      <p class="subtitle">Let's discuss how we can collaborate</p>
+    </div>
+    
+    <div class="row">
+      <!-- Contact Info -->
+      <div class="col-lg-4">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="content">
+              <h4>Location</h4>
+              <p>Bowling Green, Ohio, USA</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="icon"><i class="fas fa-envelope"></i></div>
+            <div class="content">
+              <h4>Email</h4>
+              <p><a href="mailto:isaackobbyanni@gmail.com">isaackobbyanni@gmail.com</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="icon"><i class="fas fa-user-graduate"></i></div>
+            <div class="content">
+              <h4>Academic Profile</h4>
+              <p><a href="https://www.bgsu.edu/graduate/doctoral-programs/data-science" target="_blank">BGSU Data Science</a></p>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <h4>Connect With Me</h4>
+            <div class="social-icons">
+              <a href="https://linkedin.com/in/isaac-kobby-anni" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/ikekobby" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://twitter.com/annqwabena" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://scholar.google.com/citations" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contact Form -->
+      <div class="col-lg-8">
+        <div class="contact-form-wrapper">
+          <form id="contactForm" class="contact-form">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="email">Your Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" class="form-control" id="subject" placeholder="Enter subject">
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Contact Section -->
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="footer-info">
+          <h3>Isaac Kobby Anni</h3>
+          <p>Data Scientist & AI Researcher</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-4">
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero_section">Home</a></li>
+            <li><a href="#aboutUs">About</a></li>
+            <li><a href="#Portfolio">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col-lg-4">
+        <div class="footer-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Subscribe to my newsletter for the latest in data science and AI</p>
+          <form>
+            <input type="email" placeholder="Your email">
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>&copy; 2025 Isaac Kobby Anni. All Rights Reserved.</p>
+        </div>
+        <div class="col-md-6">
+          <div class="credits text-md-right">
+            <p>Designed with <i class="fas fa-heart"></i> for data science</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End Footer -->
+
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+<!-- JavaScript Libraries -->
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.isotope.js"></script>
+<script src="js/fancybox/jquery.fancybox.pack.js"></script>
+<script src="js/wow.js"></script>
+
+<!-- Template Main Javascript File -->
+<script src="js/custom.js"></script>
+
 </body>
 </html>

@@ -277,19 +277,19 @@ Modified by Claude
     <div class="portfolio-filters">
       <ul class="nav justify-content-center" id="filters">
         <li class="nav-item">
-          <a class="nav-link active" href="#" data-filter="*">All Projects</a>
+          <a class="nav-link active" href="https://github.com/IkeKobby" data-filter="*">All Projects</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" data-filter=".nlp">NLP Projects</a>
+          <a class="nav-link" href="https://github.com/IkeKobby/nlp_project" data-filter=".nlp">NLP Projects</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" data-filter=".cv">Computer Vision</a>
+          <a class="nav-link" href="https://github.com/IkeKobby/semantic-segmentation" data-filter=".cv">Computer Vision</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" data-filter=".ml">Machine Learning</a>
+          <a class="nav-link" href="https://github.com/IkeKobby/Data-science" data-filter=".ml">Machine Learning</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" data-filter=".exploration">Exploration</a>
+          <a class="nav-link" href="https://github.com/IkeKobby/phd-ing" data-filter=".exploration">Exploration</a>
         </li>
       </ul>
     </div>
@@ -656,7 +656,7 @@ Modified by Claude
             <div class="icon"><i class="fas fa-user-graduate"></i></div>
             <div class="content">
               <h4>Academic Profile</h4>
-              <p><a href="https://www.bgsu.edu/graduate/doctoral-programs/data-science" target="_blank">BGSU Data Science</a></p>
+              <p><a href="https://www.bgsu.edu/academics/graduate/data-science-phd.html" target="_blank">BGSU Data Science</a></p>
             </div>
           </div>
           
@@ -672,43 +672,54 @@ Modified by Claude
         </div>
       </div>
       
-      <!-- Contact Form -->
-      <div class="col-lg-8">
-        <div class="contact-form-wrapper">
-          <form id="contactForm" class="contact-form">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="name">Your Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
-                </div>
-              </div>
-              
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="email">Your Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-                </div>
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" class="form-control" id="subject" placeholder="Enter subject">
-            </div>
-            
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
+ <!-- Contact Form -->
+<div class="col-lg-8">
+  <div class="contact-form-wrapper">
+    <form id="contactForm" class="contact-form" action="https://formspree.io/f/xnnjeobo" method="POST">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+          </div>
         </div>
       </div>
+      
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter subject">
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+      </div>
+      
+      <!-- Anti-spam honeypot field -->
+      <input type="text" name="_gotcha" style="display:none">
+      
+      <!-- Custom subject line -->
+      <input type="hidden" name="_subject" value="New contact from portfolio website">
+      
+      <!-- Success page redirect - optional -->
+      <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
+      
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+    
+    <div id="form-status" class="mt-3" style="display:none;">
+      <div class="alert alert-success" id="form-success">Your message has been sent successfully!</div>
+      <div class="alert alert-danger" id="form-error">There was a problem sending your message. Please try again.</div>
     </div>
   </div>
-</section>
+</div>
 <!-- End Contact Section -->
 
 <!-- Footer -->

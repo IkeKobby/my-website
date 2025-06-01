@@ -267,4 +267,134 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Check on scroll
   window.addEventListener('scroll', animateOnScroll);
+});
+
+// Animate elements on scroll
+window.addEventListener('scroll', animateOnScroll);
+animateOnScroll(); // Run once on load
+
+// Updates Section and Popup Modal Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if popup should be shown
+  function shouldShowPopup() {
+    const lastShown = localStorage.getItem('updatesPopupLastShown');
+    const dontShowAgain = localStorage.getItem('updatesPopupDontShow');
+    
+    if (dontShowAgain === 'true') {
+      const hideUntil = parseInt(localStorage.getItem('updatesPopupHideUntil'));
+      if (Date.now() < hideUntil) {
+        return false;
+      } else {
+        // Clear the don't show flag after 7 days
+        localStorage.removeItem('updatesPopupDontShow');
+        localStorage.removeItem('updatesPopupHideUntil');
+      }
+    }
+    
+    // Show popup if not shown in last 24 hours
+    if (!lastShown || Date.now() - parseInt(lastShown) > 24 * 60 * 60 * 1000) {
+      return true;
+    }
+    
+    return false;
+  }
+
+  // Show updates popup after a delay
+  if (shouldShowPopup()) {
+    setTimeout(() => {
+      const updatesModal = new bootstrap.Modal(document.getElementById('updatesModal'));
+      updatesModal.show();
+      localStorage.setItem('updatesPopupLastShown', Date.now().toString());
+    }, 3000); // Show after 3 seconds
+  }
+
+  // Handle "Don't show again" checkbox
+  const dontShowAgainCheckbox = document.getElementById('dontShowAgain');
+  const updatesModal = document.getElementById('updatesModal');
+  
+  if (updatesModal && dontShowAgainCheckbox) {
+    updatesModal.addEventListener('hidden.bs.modal', function() {
+      if (dontShowAgainCheckbox.checked) {
+        localStorage.setItem('updatesPopupDontShow', 'true');
+        localStorage.setItem('updatesPopupHideUntil', (Date.now() + 7 * 24 * 60 * 60 * 1000).toString());
+      }
+    });
+  }
+
+  // Handle "View All Updates" button
+  const viewAllUpdatesBtn = document.getElementById('viewAllUpdates');
+  if (viewAllUpdatesBtn) {
+    viewAllUpdatesBtn.addEventListener('click', function() {
+      const allUpdatesModal = new bootstrap.Modal(document.getElementById('allUpdatesModal'));
+      allUpdatesModal.show();
+    });
+  }
+
+  // Add hover animations to update cards
+  const updateCards = document.querySelectorAll('.update-card');
+  updateCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-10px)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0)';
+    });
+  });
+
+  // Add scroll animation for update cards
+  function animateUpdateCards() {
+    const updateCardsToAnimate = document.querySelectorAll('.update-card');
+    
+    updateCardsToAnimate.forEach((card, index) => {
+      const rect = card.getBoundingClientRect();
+      const isVisible = (rect.top <= window.innerHeight - 100) && (rect.bottom >= 0);
+      
+      if (isVisible && !card.classList.contains('animated')) {
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+          card.classList.add('animated');
+        }, index * 200); // Stagger the animations
+      }
+    });
+  }
+
+  // Initialize update cards as hidden for animation
+  const updateCardsForInit = document.querySelectorAll('.update-card');
+  updateCardsForInit.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(50px)';
+    card.style.transition = 'all 0.6s ease';
+  });
+
+  // Check for update cards on scroll
+  window.addEventListener('scroll', animateUpdateCards);
+  animateUpdateCards(); // Run once on load
+
+  // Add notification badge animation for featured updates
+  const featuredCards = document.querySelectorAll('.update-card.featured');
+  featuredCards.forEach(card => {
+    // Add a subtle pulse animation
+    setInterval(() => {
+      const badge = card.querySelector('.update-badge');
+      if (badge) {
+        badge.style.transform = 'scale(1.05)';
+        setTimeout(() => {
+          badge.style.transform = 'scale(1)';
+        }, 200);
+      }
+    }, 3000);
+  });
+
+  // Auto-refresh updates notification (optional)
+  // This could be connected to a backend API to check for new updates
+  function checkForNewUpdates() {
+    // Placeholder for future API integration
+    // This could fetch new updates from a server and show a notification
+    console.log('Checking for new updates...');
+  }
+
+  // Check for new updates every 5 minutes (optional)
+  // setInterval(checkForNewUpdates, 5 * 60 * 1000);
 }); 

@@ -1,49 +1,56 @@
 # Isaac Kobby Anni - Portfolio Website
 
-A modern, responsive portfolio website showcasing my data science and AI expertise, projects, and professional experience.
+A modern, responsive portfolio website showcasing AI research, projects, and professional experience.
 
 ## Features
 
 - Responsive design for all device sizes
-- Project portfolio with filtering capability
-- Skills and expertise visualization
-- Professional timeline
-- Testimonials carousel
-- Contact form
+- Research section (SLM-First Agentic Systems)
+- Project portfolio with filtering
+- Skills and experience timeline
+- Contact section (email and social links)
+- Testimonials
 
 ## Technologies Used
 
 - HTML5, CSS3, JavaScript
-- Bootstrap 4
-- jQuery
-- Font Awesome icons
-- FancyBox for image galleries
-- Isotope for portfolio filtering
-- WOW.js for scroll animations
+- Bootstrap 5.3
+- jQuery (legacy helpers)
+- Font Awesome 6
+- Fancybox 5 (image galleries)
+- Isotope (portfolio filtering)
+- Particles.js (hero background)
 
 ## Getting Started
 
 1. Clone this repository:
+   ```bash
+   git clone https://github.com/IkeKobby/my-website.git
    ```
-   git clone https://github.com/isaackobbyanni/portfolio.git
+
+2. Serve locally (recommended over opening `file://` directly):
+   ```bash
+   python3 -m http.server 8080
    ```
-
-2. Open `index.html` in your browser to view the website locally.
-
-## Customization
-
-- **Content**: Edit the text in `index.html` to update your information
-- **Images**: Replace images in the `img` folder with your own
-- **Styling**: Modify `css/style.css` to change colors, fonts, etc.
-- **Projects**: Add or remove projects in the Portfolio section
+   Then open `http://localhost:8080`
 
 ## Deployment
 
-This is a static website that can be hosted on:
+Static site—host on:
+
 - GitHub Pages
 - Netlify
 - Vercel
-- Any standard web hosting service
+- Any static web host
+
+Push to your default branch; no build step required.
+
+## Customization
+
+- **Content**: Edit `index.html`
+- **Images**: `img/` folder
+- **Styling**: `css/style.css`
+- **Behavior**: `js/main.js`
 
 ## License
 
@@ -51,6 +58,6 @@ This is a static website that can be hosted on:
 
 ## Contact
 
-For any questions or collaborations, reach out to me at:
 - Email: isaackobbyanni@gmail.com
 - LinkedIn: [linkedin.com/in/isaac-kobby-anni](https://www.linkedin.com/in/isaac-kobby-anni)
+- GitHub: [github.com/IkeKobby](https://github.com/IkeKobby)

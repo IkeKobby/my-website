@@ -1,3 +1,9 @@
+// Copyright year (auto-updates)
+document.addEventListener('DOMContentLoaded', function() {
+  const yearEl = document.getElementById('copyright-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+});
+
 // Sticky Header
 window.addEventListener('scroll', function() {
   const header = document.querySelector('.sticky-header');
@@ -153,162 +159,50 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Contact Form Validation and Submission
+// Contact section scroll animation
 document.addEventListener('DOMContentLoaded', function() {
-  const contactForm = document.getElementById('contactForm');
-  const formStatus = document.getElementById('form-status');
-  const successMessage = document.getElementById('form-success');
-  const errorMessage = document.getElementById('form-error');
-
-  if (contactForm) {
-    // Form validation
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Reset form status
-      formStatus.style.display = 'none';
-      successMessage.style.display = 'none';
-      errorMessage.style.display = 'none';
-      
-      // Remove previous validation classes
-      const formControls = contactForm.querySelectorAll('.form-control');
-      formControls.forEach(control => {
-        control.classList.remove('is-invalid');
-      });
-      
-      // Validate form fields
-      let isValid = true;
-      const name = contactForm.querySelector('#name');
-      const email = contactForm.querySelector('#email');
-      const message = contactForm.querySelector('#message');
-      
-      if (!name.value.trim()) {
-        name.classList.add('is-invalid');
-        isValid = false;
-      }
-      
-      if (!email.value.trim() || !isValidEmail(email.value)) {
-        email.classList.add('is-invalid');
-        isValid = false;
-      }
-      
-      if (!message.value.trim()) {
-        message.classList.add('is-invalid');
-        isValid = false;
-      }
-      
-      if (isValid) {
-        // Show loading state
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitButton.innerHTML;
-        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitButton.disabled = true;
-        
-        // Simulate form submission (replace with actual form submission)
-        setTimeout(() => {
-          formStatus.style.display = 'block';
-          successMessage.style.display = 'block';
-          contactForm.reset();
-          submitButton.innerHTML = originalText;
-          submitButton.disabled = false;
-          
-          // Hide success message after 5 seconds
-          setTimeout(() => {
-            formStatus.style.display = 'none';
-            successMessage.style.display = 'none';
-          }, 5000);
-        }, 1500);
-      }
-    });
-    
-    // Real-time validation
-    const formControls = contactForm.querySelectorAll('.form-control');
-    formControls.forEach(control => {
-      control.addEventListener('input', function() {
-        if (this.classList.contains('is-invalid')) {
-          this.classList.remove('is-invalid');
-        }
-      });
-    });
-  }
-  
-  // Email validation helper
-  function isValidEmail(email) {
-    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return re.test(String(email).toLowerCase());
-  }
-  
-  // Animate contact items on scroll
   const contactItems = document.querySelectorAll('.contact-item');
-  const contactFormWrapper = document.querySelector('.contact-form-wrapper');
-  
-  function animateOnScroll() {
+  const contactInfo = document.querySelector('.contact-info-centered');
+
+  function animateContactOnScroll() {
     const triggerBottom = window.innerHeight * 0.8;
-    
+
     contactItems.forEach(item => {
       const itemTop = item.getBoundingClientRect().top;
       if (itemTop < triggerBottom) {
         item.style.opacity = '1';
-        item.style.transform = 'translateX(0)';
+        item.style.transform = 'translateY(0)';
       }
     });
-    
-    if (contactFormWrapper) {
-      const formTop = contactFormWrapper.getBoundingClientRect().top;
-      if (formTop < triggerBottom) {
-        contactFormWrapper.style.opacity = '1';
-        contactFormWrapper.style.transform = 'translateY(0)';
+
+    if (contactInfo) {
+      const infoTop = contactInfo.getBoundingClientRect().top;
+      if (infoTop < triggerBottom) {
+        contactInfo.style.opacity = '1';
+        contactInfo.style.transform = 'translateY(0)';
       }
     }
   }
-  
-  // Initial check
-  animateOnScroll();
-  
-  // Check on scroll
-  window.addEventListener('scroll', animateOnScroll);
+
+  if (contactItems.length) {
+    contactItems.forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    });
+    if (contactInfo) {
+      contactInfo.style.opacity = '0';
+      contactInfo.style.transform = 'translateY(20px)';
+      contactInfo.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    }
+    animateContactOnScroll();
+    window.addEventListener('scroll', animateContactOnScroll);
+  }
 });
 
-// Animate elements on scroll
-window.addEventListener('scroll', animateOnScroll);
-animateOnScroll(); // Run once on load
-
-// Updates Section and Popup Modal Functionality
+// Updates Section (popup auto-show disabled; "View All Updates" still works)
 document.addEventListener('DOMContentLoaded', function() {
-  // Check if popup should be shown
-  function shouldShowPopup() {
-    const lastShown = localStorage.getItem('updatesPopupLastShown');
-    const dontShowAgain = localStorage.getItem('updatesPopupDontShow');
-    
-    if (dontShowAgain === 'true') {
-      const hideUntil = parseInt(localStorage.getItem('updatesPopupHideUntil'));
-      if (Date.now() < hideUntil) {
-        return false;
-      } else {
-        // Clear the don't show flag after 7 days
-        localStorage.removeItem('updatesPopupDontShow');
-        localStorage.removeItem('updatesPopupHideUntil');
-      }
-    }
-    
-    // Show popup if not shown in last 24 hours
-    if (!lastShown || Date.now() - parseInt(lastShown) > 24 * 60 * 60 * 1000) {
-      return true;
-    }
-    
-    return false;
-  }
-
-  // Show updates popup after a delay
-  if (shouldShowPopup()) {
-    setTimeout(() => {
-      const updatesModal = new bootstrap.Modal(document.getElementById('updatesModal'));
-      updatesModal.show();
-      localStorage.setItem('updatesPopupLastShown', Date.now().toString());
-    }, 3000); // Show after 3 seconds
-  }
-
-  // Handle "Don't show again" checkbox
+  // Handle "Don't show again" checkbox (if user opens modal manually)
   const dontShowAgainCheckbox = document.getElementById('dontShowAgain');
   const updatesModal = document.getElementById('updatesModal');
   
@@ -372,29 +266,4 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', animateUpdateCards);
   animateUpdateCards(); // Run once on load
 
-  // Add notification badge animation for featured updates
-  const featuredCards = document.querySelectorAll('.update-card.featured');
-  featuredCards.forEach(card => {
-    // Add a subtle pulse animation
-    setInterval(() => {
-      const badge = card.querySelector('.update-badge');
-      if (badge) {
-        badge.style.transform = 'scale(1.05)';
-        setTimeout(() => {
-          badge.style.transform = 'scale(1)';
-        }, 200);
-      }
-    }, 3000);
-  });
-
-  // Auto-refresh updates notification (optional)
-  // This could be connected to a backend API to check for new updates
-  function checkForNewUpdates() {
-    // Placeholder for future API integration
-    // This could fetch new updates from a server and show a notification
-    console.log('Checking for new updates...');
-  }
-
-  // Check for new updates every 5 minutes (optional)
-  // setInterval(checkForNewUpdates, 5 * 60 * 1000);
 }); 

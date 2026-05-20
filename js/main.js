@@ -120,39 +120,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Skills Section Animations
+// Skills section hover effects
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialize progress bars
-  const progressBars = document.querySelectorAll('.progress-bar');
-  
-  // Function to animate progress bars when they come into view
-  const animateProgressBars = () => {
-    progressBars.forEach(bar => {
-      const rect = bar.getBoundingClientRect();
-      const isVisible = (rect.top <= window.innerHeight) && (rect.bottom >= 0);
-      
-      if (isVisible && !bar.classList.contains('animate-progress')) {
-        const width = bar.getAttribute('aria-valuenow');
-        bar.style.setProperty('--progress-width', `${width}%`);
-        bar.classList.add('animate-progress');
-      }
-    });
-  };
-
-  // Initial check for progress bars in view
-  animateProgressBars();
-
-  // Check progress bars on scroll
-  window.addEventListener('scroll', animateProgressBars);
-
-  // Add hover effects to skill boxes
-  const skillBoxes = document.querySelectorAll('.skill-box');
-  
-  skillBoxes.forEach(box => {
+  document.querySelectorAll('.skill-box').forEach(box => {
     box.addEventListener('mouseenter', function() {
       this.style.transform = 'translateY(-5px)';
     });
-    
     box.addEventListener('mouseleave', function() {
       this.style.transform = 'translateY(0)';
     });
@@ -200,21 +173,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Updates Section (popup auto-show disabled; "View All Updates" still works)
+// Updates section
 document.addEventListener('DOMContentLoaded', function() {
-  // Handle "Don't show again" checkbox (if user opens modal manually)
-  const dontShowAgainCheckbox = document.getElementById('dontShowAgain');
-  const updatesModal = document.getElementById('updatesModal');
-  
-  if (updatesModal && dontShowAgainCheckbox) {
-    updatesModal.addEventListener('hidden.bs.modal', function() {
-      if (dontShowAgainCheckbox.checked) {
-        localStorage.setItem('updatesPopupDontShow', 'true');
-        localStorage.setItem('updatesPopupHideUntil', (Date.now() + 7 * 24 * 60 * 60 * 1000).toString());
-      }
-    });
-  }
-
   // Handle "View All Updates" button
   const viewAllUpdatesBtn = document.getElementById('viewAllUpdates');
   if (viewAllUpdatesBtn) {

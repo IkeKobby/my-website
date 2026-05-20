@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+*.log
+
+# Keep dissertation research diagram out of public repo (optional)
+assets/research_plan_overview.svg

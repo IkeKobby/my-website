@@ -45,7 +45,7 @@ Static site—host on:
 
 Push to your default branch; no build step required.
 
-After deploy, verify `https://isaackobbyanni.com/sitemap.xml` and `https://isaackobbyanni.com/robots.txt` are reachable (update domain in those files if yours differs).
+After deploy, verify `https://isaackobby.com/sitemap.xml` and `https://isaackobby.com/robots.txt` are reachable.
 
 ## Customization
 
